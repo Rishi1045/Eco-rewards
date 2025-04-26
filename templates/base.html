@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Eco Rewards</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f9fafb;
+      font-family: 'Poppins', sans-serif;
+      color: #2d3748;
+    }
+
+    .topnav {
+      background-color: #2f3b4c;
+      padding: 20px 0;
+    }
+
+    .topnav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: inline-block;
+    }
+
+    .container {
+      max-width: 1200px;
+    }
+
+    h2, h3, h4 {
+      color: #2f3b4c;
+      margin: 15px 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .classy_frame {
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 20px;
+      background-color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      border-top: 1px solid #d1d5db;
+      margin: 30px 0;
+    }
+
+    .image-upload img {
+      width: 50px;
+      margin: 10px 0;
+    }
+
+    .image-upload > input {
+      display: none;
+    }
+
+    .classify-button {
+      background-color: #2f3b4c;
+      color: #ffffff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .classify-button:hover {
+      background-color: #374151;
+    }
+
+    #upload-web {
+      display: block;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    #upload-mobile {
+      display: none;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    #logo-img {
+      font-size: 36px;
+      font-weight: 600;
+      color: #e5e7eb;
+      margin: 0;
+    }
+
+    #loading {
+      background: rgba(0, 0, 0, 0.75);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 9999;
+      display: none;
+      color: #ffffff;
+      text-align: center;
+      padding-top: 20%;
+      font-size: 18px;
+    }
+
+    footer {
+      background-color: #2f3b4c;
+      color: #e5e7eb;
+      padding: 25px 0;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #e5e7eb;
+    }
+
+    @media screen and (max-width: 600px) {
+      h2 { font-size: 22px; }
+      h3 { font-size: 18px; }
+      h4 { font-size: 14px; }
+      .image-upload img { width: 40px; }
+      .classify-button { font-size: 14px; padding: 10px 20px; }
+      #upload-web { display: none; }
+      #upload-mobile { display: block; }
+      #logo-img { font-size: 28px; }
+    }
+  </style>
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+  {{ JSGlue.include() }}
+</head>
+<body>
+  <nav class="navbar topnav">
+    <div class="container">
+      <center>
+        <a href="/">
+          <h1 id="logo-img">Eco Rewards</h1>
+        </a>
+      </center>
+    </div>
+  </nav>
+
+  <div id="loading">
+    <h3>Processing your waste classification...</h3>
+  </div>
+
+  <div class="modal fade" id="errorPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content classy_frame">
+        <div class="modal-header">
+          <p class="modal-title" id="errorTitle" style="font-size: 18px; font-weight: 600;">Modal title</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="errorMessage" style="font-size: 14px;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn classify-button" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
