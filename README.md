@@ -10,3 +10,8 @@ An AI-powered real-time waste classification system using deep learning. This ap
   - Batteries, Clothes, E-waste, Glass, Light Bulbs, Metal, Organic, Paper, Plastic
 - Simple user interface for real-time prediction
 - Model trained with data augmentation and fine-tuning for high accuracy.
+
+## Tech Stack used
+-HTML,CSS,Javascript,Django for WebDev
+-Python,Jupyter,VGG16,Tensorflow(Keras) etc for Classification model
+-OpenCV for Real Time Classification
