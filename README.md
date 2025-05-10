@@ -17,9 +17,16 @@ An AI-powered real-time waste classification system using deep learning. This ap
 -OpenCV for Real Time Classification  
 
 ![image](https://github.com/user-attachments/assets/24a6fcac-08e7-4ce8-801f-02ea09ec61e5)  
-UI  
+##### UI  
 
 ![image](https://github.com/user-attachments/assets/2b6ab03a-8f9d-404d-b5db-ae4e819eee60)
-Output
+##### Output  
+
+![image](https://github.com/user-attachments/assets/dc5fab42-dfd3-438f-8aa1-db04e2af9460)
+##### Locating and informing Government departments nearby  
+
+![image](https://github.com/user-attachments/assets/48e01c7f-fdda-4db9-a7e8-5f69c0eb72e7)
+![image](https://github.com/user-attachments/assets/128fde28-eb33-463c-82c6-3f5d667f4528)
+##### Real Time Model(not integrated)
 
 
